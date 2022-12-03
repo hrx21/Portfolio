@@ -17,20 +17,27 @@ import mui from '../public/images/mui.png'
 import react from '../public/images/react.png'
 import git from '../public/images/git.png'
 import bootstrap from '../public/images/bootstrap.png'
+import sadhana from '../public/images/sadhana.png'
+import app from '../public/images/app.png'
 import IndividualIntervalsExample from './carousel';
+import TransitionsModal from './mui-modal';
+import { useState } from 'react';
 
 export default function Home() {
+
+  const [darkMode, setDarkMode] = useState(false)
+
   return (
     <>
-      <div>
+      <div className={darkMode ? "dark" : " "}>
         <Head></Head>
-        <main className="bg-white px-10">
+        <main className="bg-white px-10 md:px-20 lg:px-40 dark:bg-gray-900 dark:text-gray-500">
           <section className="min-h-screen">
             <nav className="py-10 mb-12 flex justify-between">
               <h1 className="text-xl font-burtons">HRX</h1>
               <ul className="flex items-center">
                 <li>
-                  <DarkModeIcon className="cursor-pointer" />
+                  <DarkModeIcon onClick={() => setDarkMode(!darkMode)} className="cursor-pointer dark:text-white" />
                 </li>
                 <li>
                   <a
@@ -42,20 +49,20 @@ export default function Home() {
                 </li>
               </ul>
             </nav>
-            <div className="text-center p-10">
-              <h2 className='text-4xl py-2 text-teal-600 font-medium'>Hritik Shettigar</h2>
-              <h3 className='text-xl py-2'>Front-End Developer.</h3>
-              <p className='text-md py-5 leading-8 text-gray-700'>
+            <div className="text-center p-10 dark:text-gray-500">
+              <h2 className='text-4xl py-2 text-teal-600 font-medium md:text-6xl'>Hritik Shettigar</h2>
+              <h3 className='text-xl py-2 md:text-3xl'>Front-End Developer.</h3>
+              <p className='text-md py-5 leading-8 text-gray-700 md:text-xl max-w-xl mx-auto'>
                 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Rem
                 odit, similique doloribus maxime quia laborum.
               </p>
             </div>
-            <div className='text-4xl flex justify-center gap-16 py-3 text-gray-600'>
+            <div className='text-4xl flex justify-center gap-16 py-3 text-gray-600 dark:text-gray-500'>
               <TwitterIcon className="cursor-pointer" />
               <LinkedInIcon className="cursor-pointer" />
               <YouTubeIcon className="cursor-pointer" />
             </div>
-            <div className='relative bg-gradient-to-b from-teal-500 rounded-full w-96 h-96 mt-20 mx-auto overflow-hidden'>
+            <div className='relative bg-gradient-to-b from-teal-500 rounded-full w-96 h-96 mt-20 mx-auto overflow-hidden md:h-96 md:w-96'>
               <Image
               layout='fill'
               objectFit='cover'
@@ -64,9 +71,9 @@ export default function Home() {
             </div>
           </section>
           <section>
-            <div>
+            <div className='dark:text-gray-500'>
               <h1 className='text-3xl py-1'>My Projects/ Services I offer</h1>
-              <p className='text-md py-2 leading-8 text-gray-800'>
+              <p className='text-md py-2 leading-8 text-gray-800 dark:text-gray-500'>
                 Started as a full time front-end developer willing to work for 
                 <span className='text-teal-500'> agencies </span> and <span className='text-teal-500'> startups </span>
                 I've also collaborated with talented people to create digital products for both business and consumer use.
@@ -74,7 +81,7 @@ export default function Home() {
               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic ducimus tempora, non veniam quae explicabo beatae iure. Adipisci voluptatem possimus accusamus perspiciatis.  </p>
             </div>
             <div>
-              <div className='flex items-center justify-center flex-col shadow-xl p-10 rounded-xl my-10'>
+              <div className='flex items-center justify-center flex-col shadow-xl p-10 rounded-xl my-10 dark:text-gray-500 dark:shadow-2xl'>
                 <Image src={design} width={100} height={100} />
                 <h3 className='text-lg font-medium pt-8 pb-2'>Beautiful Designs</h3>
                 <p className='py-2'>Creating Elegant designs suited for your needs.</p>
@@ -84,8 +91,7 @@ export default function Home() {
                 <Image src={canva} width={100} height={100} />
                 </div>
               </div>
-
-              <div className='flex items-center justify-center flex-col shadow-xl p-10 rounded-xl my-10'>
+              <div className='flex items-center justify-center flex-col shadow-xl p-10 rounded-xl my-10 dark:text-gray-500 dark:shadow-2xl'>
                 <Image src={code} width={100} height={100} />
                 <h3 className='text-lg font-medium pt-8 pb-2'>Technologies I use</h3>
                 <p className='py-2'>Creating Elegant websites and applications suited for your needs.</p>
@@ -109,6 +115,20 @@ export default function Home() {
               </div> */}
             </div>
           </section>
+
+          <div className='dark:text-gray-500'>
+            <h3 className='text-2xl font-semibold text-black mb-10'>Projects I have worked on</h3>
+            <a href="https:://maaambeyeducation.in"></a>
+            <div className='flex justify-center items-center flex-col'>
+            <Image src={sadhana} width={750} height={750} />
+            <p className='text-xl my-8'>Sadhana.com is a health website with blogs about fit lifestyle to a symptom checker app.
+            <br /> Suffering from cold? It might be flu,
+             Don't worry Check it on sadhana.com 
+            </p>
+            <Image src={app} width={750} height={750} />
+            </div>
+          </div>
+
         </main>
       </div>
     </> 
