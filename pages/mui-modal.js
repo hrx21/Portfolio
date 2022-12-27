@@ -6,6 +6,7 @@ import Fade from '@mui/material/Fade';
 import Button from '@mui/material/Button';
 import Image from 'next/image';
 import resume from '.././public/images/resume.png';
+import { useState } from 'react';
 
 const style = {
   position: 'absolute',
@@ -19,14 +20,13 @@ const style = {
   p: 4,
 };
 
-export default function TransitionsModal() {
+export default function ResModal({ setResModal }) {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
   return (
     <div>
-      <Button onClick={handleOpen}>Open modal</Button>
       <Modal
         aria-labelledby="transition-modal-title"
         aria-describedby="transition-modal-description"
@@ -40,7 +40,12 @@ export default function TransitionsModal() {
       >
         <Fade in={open}>
           <Box sx={style}>
-            <Image src={resume} width={100} height={100} />
+            <Image
+              onClick={() => setResModal(false)}
+              src={resume}
+              width={100}
+              height={100}
+            />
           </Box>
         </Fade>
       </Modal>
