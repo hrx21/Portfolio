@@ -90,9 +90,9 @@ export default function Home() {
               <p className="text-md py-2 leading-8 text-gray-800 dark:text-gray-500">
                 Started as a full time front-end developer willing to work for
                 <span className="text-teal-500"> agencies </span> and
-                <span className="text-teal-500"> startups </span>
-                I've also collaborated with talented people to create digital
-                products for both business and consumer use.
+                <span className="text-teal-500"> startups </span>I have also
+                collaborated with talented people to create digital products for
+                both business and consumer use.
               </p>
             </div>
             <div>
