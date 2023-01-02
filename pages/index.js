@@ -37,14 +37,7 @@ export default function Home() {
 
   return (
     <>
-      <div className={darkMode ? 'dark' : ' '}>
-        <ResultModal
-          show={showResult}
-          onHide={() => {
-            setShowResult(false);
-          }}
-          setShowResult={setShowResult}
-        />
+      <div id="main" className={darkMode ? 'dark' : ' '}>
         <main className="bg-white px-10 md:px-20 lg:px-40 dark:bg-gray-900 dark:text-gray-500">
           <section className="min-h-screen">
             <nav className="py-10 mb-12 flex justify-between">
@@ -80,7 +73,7 @@ export default function Home() {
                 maintaining responsive websites.
               </p>
             </div>
-            <div className="relative bg-gradient-to-b from-teal-500 rounded-full w-96 h-96 mt-20 mx-auto overflow-hidden md:h-96 md:w-96">
+            <div className="relative bg-gradient-to-b from-teal-500 rounded-full w-80 h-80 mt-20 mx-auto overflow-hidden md:h-96 md:w-96">
               <Image src={dev} />
             </div>
           </section>
@@ -120,7 +113,7 @@ export default function Home() {
                   needs.
                 </p>
                 <h4 className="text-teal-500 py-4">Languages I use.</h4>
-                <div className="flex justify-center items-center flex-row flex-1 gap-10">
+                <div className="flex justify-center items-center md:flex-row 2xl:flex-col lg:flex-row sm:flex-row flex-col flex-1 gap-10">
                   <Image src={html} width={100} height={100} />
                   <Image src={css} width={100} height={100} />
                   <Image src={js} width={100} height={100} />
@@ -212,7 +205,7 @@ export default function Home() {
               <p className="text-3xl font-semibold text-center my-10">
                 My Contacts
               </p>
-              <div className="flex justify-center items-center flex-row gap-10">
+              <div className="flex justify-center items-center sm:flex-row lg:flex-row md:flex-row flex-col gap-10">
                 <span className="hover:text-blue-500 hover:underline hover:cursor-pointer">
                   <EmailOutlinedIcon /> hshettigar46@gmail.com
                 </span>
