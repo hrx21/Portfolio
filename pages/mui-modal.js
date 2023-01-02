@@ -20,10 +20,11 @@ const style = {
   p: 4,
 };
 
-export default function ResModal({ setResModal }) {
+export default function ResultModal(props) {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
+  const { setShowResult } = props;
 
   return (
     <div>
@@ -40,12 +41,7 @@ export default function ResModal({ setResModal }) {
       >
         <Fade in={open}>
           <Box sx={style}>
-            <Image
-              onClick={() => setResModal(false)}
-              src={resume}
-              width={100}
-              height={100}
-            />
+            <Image src={resume} width={100} height={100} />
           </Box>
         </Fade>
       </Modal>

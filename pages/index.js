@@ -1,7 +1,7 @@
-import Head from 'next/head';
+// import { createClient } from 'next-sanity';
+// import PortableText from 'react-portable-text';
 import DarkModeIcon from '@mui/icons-material/DarkMode';
 import TwitterIcon from '@mui/icons-material/Twitter';
-import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import YouTubeIcon from '@mui/icons-material/YouTube';
 import Image from 'next/image';
 import avtar from '../public/images/avtar.png';
@@ -19,25 +19,32 @@ import git from '../public/images/git.png';
 import bootstrap from '../public/images/bootstrap.png';
 import sadhana from '../public/images/sadhana.png';
 import app from '../public/images/app.png';
-import IndividualIntervalsExample from './carousel';
-import TransitionsModal from './mui-modal';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import dev from '../public/images/dev.webp';
-import { Carousel } from 'react-responsive-carousel';
-import 'react-responsive-carousel/lib/styles/carousel.min.css'; // requires a loader
-import ResModal from './mui-modal';
+// import imageUrlBuilder from '@sanity/image-url';
+import Link from 'next/link';
+import EmailOutlinedIcon from '@mui/icons-material/EmailOutlined';
+import CallOutlinedIcon from '@mui/icons-material/CallOutlined';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import ResultModal from './mui-modal';
 
 export default function Home() {
   const [darkMode, setDarkMode] = useState(false);
-  const [resModal, setResModal] = useState(false);
+  const [showResult, setShowResult] = useState(false);
   const openInNewTab = (url) => {
     window.open(url);
   };
 
   return (
     <>
-      <ResModal show={resModal} />
       <div className={darkMode ? 'dark' : ' '}>
+        <ResultModal
+          show={showResult}
+          onHide={() => {
+            setShowResult(false);
+          }}
+          setShowResult={setShowResult}
+        />
         <main className="bg-white px-10 md:px-20 lg:px-40 dark:bg-gray-900 dark:text-gray-500">
           <section className="min-h-screen">
             <nav className="py-10 mb-12 flex justify-between">
@@ -50,13 +57,13 @@ export default function Home() {
                   />
                 </li>
                 <li>
-                  <a
-                    onClick={() => setResModal(true)}
+                  {/* <a
+                    onClick={() => setShowResult(true)}
                     className="bg-gradient-to-r from-cyan-400 to-teal-500 text-white px-4 py-2 rounded-md ml-8"
                     href="#"
                   >
                     Resume
-                  </a>
+                  </a> */}
                 </li>
               </ul>
             </nav>
@@ -73,13 +80,8 @@ export default function Home() {
                 maintaining responsive websites.
               </p>
             </div>
-            <div className="text-4xl flex justify-center gap-16 py-3 text-gray-600 dark:text-gray-500">
-              <TwitterIcon className="cursor-pointer" />
-              <LinkedInIcon className="cursor-pointer" />
-              <YouTubeIcon className="cursor-pointer" />
-            </div>
             <div className="relative bg-gradient-to-b from-teal-500 rounded-full w-96 h-96 mt-20 mx-auto overflow-hidden md:h-96 md:w-96">
-              <Image layout="fill" objectFit="cover" src={dev} />
+              <Image src={dev} />
             </div>
           </section>
           <section>
@@ -91,11 +93,6 @@ export default function Home() {
                 <span className="text-teal-500"> startups </span>
                 I've also collaborated with talented people to create digital
                 products for both business and consumer use.
-              </p>
-              <p>
-                {/* Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic
-                ducimus tempora, non veniam quae explicabo beatae iure. Adipisci
-                voluptatem possimus accusamus perspiciatis. */}
               </p>
             </div>
             <div>
@@ -134,21 +131,48 @@ export default function Home() {
                   <Image src={mui} width={100} height={100} />
                 </div>
               </div>
-              {/* <div className='flex items-center justify-center flex-col shadow-xl p-10 rounded-xl my-10'>
-                <Image src={design} width={100} height={100} />
-                <h3 className='text-lg font-medium pt-8 pb-2'>Beautiful Designs</h3>
-                <p className='py-2'>Creating Elegant designs suited for your needs.</p>
-                <h4 className='text-teal-500 py-4'>Design Tools I use.</h4>
-              </div> */}
             </div>
           </section>
-
-          <div className="dark:text-gray-500">
-            <h3 className="dark:text-gray-500 text-2xl font-semibold text-black mb-10">
-              Projects I have worked on
+          {/* <div className="flex flex-1 justify-center flex-col items-center py-10">
+            <h3 className="text-gray-700 text-4xl my-5">
+              I ALSO LIKE TO WRITE
             </h3>
+            <p className="text-2xl text-gray-600">Read my Blogs!</p>
+          </div>
+          <div className="w-full grid grid-cols-3 gap-5 hover:text-yellow-50">
+            {blogs.map((item) => {
+              return (
+                <Link key={item.slug} href={'/blog/' + item.slug.current}>
+                  <div
+                    style={{
+                      backgroundImage: `url(${builder
+                        .image(item.blogimage)
+                        .width()
+                        .url()})`,
+                    }}
+                    className="bg-cover h-80 bg-center bg-no-repeat hover:text-blue-400"
+                  ></div>
+                  <div className="text-gray-500 text-center py-3 px-5">
+                    <span className="font-body text-lg font-semibold dark:text-gray-500 text-black">
+                      {item.title}
+                    </span>
+                    <span className="pt-2 font-body text-gray-200">
+                      {item.metadesc}
+                    </span>
+                  </div>
+                </Link>
+              );
+            })}
+          </div> */}
+          <div className="dark:text-gray-500">
+            <h1 className="dark:text-gray-500 text-2xl font-semibold text-black mb-10">
+              Projects I have worked on
+            </h1>
             <a href="https:://maaambeyeducation.in"></a>
-            <div className="flex justify-center items-center flex-col">
+            <div className="flex items-center justify-center flex-col shadow-xl p-10 rounded-xl dark:text-gray-500 dark:shadow-2xl">
+              <h3 className="dark:text-gray-500 text-2xl font-semibold text-black mb-10">
+                Sadhana
+              </h3>
               <p className="text-xl my-8">
                 <button
                   className="hover:underline pr-2 text-blue-400"
@@ -158,16 +182,50 @@ export default function Home() {
                 >
                   Sadhana.in
                 </button>
-                {/* <a
-                  href="https://www.maaambeyeducation.in"
-                >
-                  Sadhana.com
-                </a>{' '} */}
-                is a health website with blogs about fit lifestyle to a symptom
-                checker app.
-                <br /> Suffering from cold? It might be flu, Don't worry Check
-                it out on sadhana.in
+                is a website which helps users to search for diseases, symptoms
+                and cures with s build in application to analyse and predict the
+                probability of diseases according to the symptoms and
+                questionary answered by user.
               </p>
+            </div>
+            <div className="flex items-center justify-center flex-col shadow-xl p-10 rounded-xl text-xl dark:text-gray-500 dark:shadow-2xl">
+              <h3 className="dark:text-gray-500 text-2xl font-semibold text-black mb-10">
+                Smiley Huts
+              </h3>
+              <p>
+                Smiley huts is a US-Canada based property listing website where
+                users can register to rent or book listed properties based on
+                monthly subscription plan.
+              </p>
+            </div>
+            <div className="flex items-center justify-center flex-col shadow-xl p-10 rounded-xl text-xl dark:text-gray-500 dark:shadow-2xl">
+              <h3 className="dark:text-gray-500 text-2xl font-semibold text-black mb-10">
+                BBDG
+              </h3>
+              <p>
+                Website which provides and offers various services like finance
+                & loan advisory, solve business and start-up related queries &
+                support and many more to the world users and existing customers.
+              </p>
+            </div>
+            <div className="py-32">
+              <p className="text-3xl font-semibold text-center my-10">
+                My Contacts
+              </p>
+              <div className="flex justify-center items-center flex-row gap-10">
+                <span className="hover:text-blue-500 hover:underline hover:cursor-pointer">
+                  <EmailOutlinedIcon /> hshettigar46@gmail.com
+                </span>
+                <span className="hover:text-blue-500 hover:underline hover:cursor-pointer">
+                  <CallOutlinedIcon /> +91 7738036601
+                </span>
+                <a
+                  className="hover:text-blue-500 hover:underline hover:cursor-pointer"
+                  href="https://www.linkedin.com/in/hritik-shettigar-2b8172177/"
+                >
+                  <LinkedInIcon /> Hritik Shettigar
+                </a>
+              </div>
             </div>
           </div>
         </main>
