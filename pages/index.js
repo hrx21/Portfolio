@@ -27,6 +27,7 @@ import EmailOutlinedIcon from '@mui/icons-material/EmailOutlined';
 import CallOutlinedIcon from '@mui/icons-material/CallOutlined';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import ResultModal from './mui-modal';
+import CodeIcon from '@mui/icons-material/Code';
 
 export default function Home() {
   const [darkMode, setDarkMode] = useState(false);
@@ -41,7 +42,7 @@ export default function Home() {
         <main className="bg-white px-10 md:px-20 lg:px-40 dark:bg-gray-900 dark:text-gray-500">
           <section className="min-h-screen">
             <nav className="py-10 mb-12 flex justify-between">
-              <h1 className="text-xl font-burtons">DEV</h1>
+              <CodeIcon />
               <ul className="flex items-center">
                 <li>
                   <DarkModeIcon
