@@ -74,7 +74,7 @@ export default function Home() {
                 maintaining responsive websites.
               </p>
             </div>
-            <div className="relative bg-gradient-to-b from-teal-500 rounded-full w-80 h-80 mt-20 mx-auto overflow-hidden md:h-96 md:w-96">
+            <div className="relative bg-gradient-to-b from-teal-500 rounded-full w-72 h-72 mx-auto overflow-hidden md:h-96 md:w-96">
               <Image src={dev} />
             </div>
           </section>
