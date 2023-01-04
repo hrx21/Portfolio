@@ -70,7 +70,7 @@ export default function Home() {
                 // id="bio"
                 className="text-md py-5 leading-8 text-gray-700 md:text-xl max-w-xl mx-auto dark:text-gray-500"
               >
-                Front-End Developer with a year of experience building and
+                Front-End Developer with having experience building and
                 maintaining responsive websites.
               </p>
             </div>
@@ -114,12 +114,12 @@ export default function Home() {
                   needs.
                 </p>
                 <h4 className="text-teal-500 py-4">Languages I use.</h4>
-                <div className="flex justify-center items-center md:flex-row 2xl:flex-col lg:flex-row sm:flex-row flex-col flex-1 gap-10">
+                <div className="flex justify-center items-center md:flex-row 2xl:flex-row lg:flex-row sm:flex-row flex-col flex-1 gap-10">
                   <Image src={html} width={100} height={100} />
                   <Image src={css} width={100} height={100} />
                   <Image src={js} width={100} height={100} />
-                  <Image src={react} width={100} height={100} />
-                  <Image src={next} width={100} height={100} />
+                  {/* <Image src={react} width={100} height={100} /> */}
+                  {/* <Image src={next} width={100} height={100} /> */}
                   <Image src={git} width={100} height={100} />
                   <Image src={bootstrap} width={100} height={100} />
                   <Image src={mui} width={100} height={100} />
@@ -163,7 +163,7 @@ export default function Home() {
               Projects I have worked on
             </h1>
             <a href="https:://maaambeyeducation.in"></a>
-            <div className="flex items-center justify-center flex-col shadow-xl p-10 rounded-xl dark:text-gray-500 dark:shadow-2xl">
+            <div className="flex items-center justify-center flex-col shadow-xl p-10 rounded-xl dark:text-gray-500 dark:shadow-2xl cursor-pointer hover:bg-teal-100">
               <h3 className="dark:text-gray-500 text-2xl font-semibold text-black mb-10">
                 Sadhana
               </h3>
@@ -182,7 +182,7 @@ export default function Home() {
                 questionary answered by user.
               </p>
             </div>
-            <div className="flex items-center justify-center flex-col shadow-xl p-10 rounded-xl text-xl dark:text-gray-500 dark:shadow-2xl">
+            <div className="flex items-center justify-center flex-col shadow-xl p-10 rounded-xl text-xl dark:text-gray-500 dark:shadow-2xl cursor-pointer hover:bg-teal-100">
               <h3 className="dark:text-gray-500 text-2xl font-semibold text-black mb-10">
                 Smiley Huts
               </h3>
@@ -192,7 +192,7 @@ export default function Home() {
                 monthly subscription plan.
               </p>
             </div>
-            <div className="flex items-center justify-center flex-col shadow-xl p-10 rounded-xl text-xl dark:text-gray-500 dark:shadow-2xl">
+            <div className="flex items-center justify-center flex-col shadow-xl p-10 rounded-xl text-xl dark:text-gray-500 dark:shadow-2xl cursor-pointer hover:bg-teal-100">
               <h3 className="dark:text-gray-500 text-2xl font-semibold text-black mb-10">
                 BBDG
               </h3>
