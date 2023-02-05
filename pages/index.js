@@ -118,8 +118,8 @@ export default function Home() {
                   <Image src={html} width={100} height={100} />
                   <Image src={css} width={100} height={100} />
                   <Image src={js} width={100} height={100} />
-                  {/* <Image src={react} width={100} height={100} /> */}
-                  {/* <Image src={next} width={100} height={100} /> */}
+                  <Image src={react} width={100} height={100} />
+                  <Image src={next} width={100} height={100} />
                   <Image src={git} width={100} height={100} />
                   <Image src={bootstrap} width={100} height={100} />
                   <Image src={mui} width={100} height={100} />
